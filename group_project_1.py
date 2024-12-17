@@ -67,8 +67,9 @@ players = [Player(input(f"Enter name for Player {i + 1}: ")) for i in range(PLAY
 while True:
     deck = Deck(ALL_VALUES, ALL_SUITS)
 
-    for player in players:
-        player.hand = [deck.deal() for _ in range(CARDS_DEALT)]
+    for _ in range(CARDS_DEALT):
+        for player in players:
+            player.hand.append(deck.deal())
 
     for player in players:
         print(player)
