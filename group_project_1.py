@@ -26,15 +26,13 @@ class Deck:
         return len(self.cards)
 
 # მოთამაშის კლასი, აქვს სახელი და კარტის კლასის ობიექტებისგან შემდგარი სია
-class Player():
+class Player:
     def __init__(self,name):
         self.name = name
         self.hand = []
     def __str__(self):
-        player_hand = f"{self.name}'s Cards: "
-        for card in self.hand:
-            player_hand += str(card)+ " "
-        return player_hand
+        player_hand = " ".join(str(card) for card in self.hand)
+        return f"{self.name}'s Cards: {player_hand}"
     
 # სტატიკური მეთოდები
 # 1 კარტის შეცვლა
