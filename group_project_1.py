@@ -58,14 +58,15 @@ def change_card(player, deck):
 # გლობალური კონფიგურაციები
 PLAYER_COUNT = 3
 CARDS_DEALT = 5
-ALL_COLORS = ["S","H","C","D"]
+ALL_SUITS = ["S", "H", "C", "D"]
 ALL_VALUES = {"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10,"J":11,"Q":12,"K":13,"A":20}
 
 # კოდის გაშვება
 players = [Player(input(f"Enter name for Player {i + 1}: ")) for i in range(PLAYER_COUNT)]
 
 while True:
-    deck = Deck(ALL_VALUES, ALL_COLORS)
+    deck = Deck(ALL_VALUES, ALL_SUITS)
+
     for player in players:
         for _ in range(CARDS_DEALT):
             card = deck.deal()
