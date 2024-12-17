@@ -68,9 +68,8 @@ while True:
     deck = Deck(ALL_VALUES, ALL_SUITS)
 
     for player in players:
-        for _ in range(CARDS_DEALT):
-            card = deck.deal()
-            player.hand.append(card)
+        player.hand = [deck.deal() for _ in range(CARDS_DEALT)]
+
     for player in players:
         print(player)
         if change_card(player,deck):
