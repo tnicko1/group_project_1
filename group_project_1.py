@@ -9,17 +9,21 @@ class Card:
         return f"{self.suit}{self.value}"
 
 # კლასი deck არის ლისტის შვილობილი, დავამატე ექსტრა მეთოდები გლობალური კონფიგურაციებზე დაფუძნებით დასტის შესაქმნელად და მოთამაშეებისთვის დარიგებისთვის.
-class Deck(list):
-    def __init__(self,colors,values):
-        for color in colors:
-            for value in values:
-                self.append(Card(color,value))
+class Deck:
+    def __init__(self,suits,values):
+        self.cards = [Card(suit, value) for suit in suits for value in values]
+        self.shuffle()
+
+    def shuffle(self):
+        random.shuffle(self.cards)
+
     def deal(self):
-        if (not len(self)):
-            raise ValueError("No more cards to deal")
-        random_card = random.choice(self)
-        self.pop(self.index(random_card))
-        return random_card
+        if not self.cards:
+            raise ValueError("No more cards in the deck")
+        return self.cards.pop()
+
+    def __len__(self):
+        return len(self.cards)
 
 # მოთამაშის კლასი, აქვს სახელი და კარტის კლასის ობიექტებისგან შემდგარი სია
 class Player():
