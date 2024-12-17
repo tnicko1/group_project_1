@@ -36,24 +36,24 @@ class Player:
     
 # სტატიკური მეთოდები
 # 1 კარტის შეცვლა
-def change_card(player,deck):
+def change_card(player, deck):
     while True:
-        choice = input("Do you want to change 1 card? (y/n): ").lower()
+        choice = input(f"{player.name}, do you want to change a card? (y/n): ").lower()
         if choice == "n":
             return False
         if choice == "y":
             break
-        print("Please choose Y or N")
+        print("Please enter 'y' or 'n'.")
     
     while True:
-        choice = input("Which card do you want to change: ")
+        selected_card = input(f"{player.name}, which card do you want to change? ")
         for card in player.hand:
-            if str(card) == choice:
-                
+            if str(card) == selected_card:
                 card_index = player.hand.index(card)
                 player.hand[card_index] = deck.deal()
+                print(f"{player.name}'s updated hand: {player}")
                 return True
-        print("Card not found in hand")
+        print("Card not found in hand. Please try again.")
     
 # გლობალური კონფიგურაციები
 PLAYER_COUNT = 3
