@@ -72,8 +72,9 @@ while True:
 
     for player in players:
         print(player)
-        if change_card(player,deck):
-            print(f"Updated {player}")
+
+    for player in players:
+        change_card(player, deck)
 
      # აქ უბრალოდ საჩვენებლად გავაკეთე მე როგორ წარმომიდგენია, სანამ winners ლისტში 1ზე მეტი playeri-ს ობიექტია იქამდე ლუპი იმუშავებს.
      # winners ენიჭება ვალიდაციის შედეგად მოგებული მოთამაშეების სია, თუ ერთია გამარჯვებული, მაშინ თამაში რჩება
