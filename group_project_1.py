@@ -1,12 +1,12 @@
 import random
 
 # კლასი card აერთიანებს ფერებს და მნიშვნელობას კონფიგურაციიდან
-class Card():
-    def __init__(self,color,value):
-        self.color = color
+class Card:
+    def __init__(self,suit,value):
+        self.suit = suit
         self.value = value
     def __str__(self):
-        return self.color+self.value
+        return f"{self.suit}{self.value}"
 
 # კლასი deck არის ლისტის შვილობილი, დავამატე ექსტრა მეთოდები გლობალური კონფიგურაციებზე დაფუძნებით დასტის შესაქმნელად და მოთამაშეებისთვის დარიგებისთვის.
 class Deck(list):
