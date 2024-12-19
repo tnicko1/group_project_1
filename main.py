@@ -9,7 +9,7 @@ ALL_SUITS = ["S", "H", "C", "D"]
 ALL_VALUES = {"2": 2, "3": 3, "4": 3, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 11, "Q": 12, "K": 13, "A": 20}
 
 def main():
-    players = [Player(input(f"Enter name for Player {i + 1}: ")) for i in range(PLAYER_COUNT)]
+    players = [Player(input(f"Enter name for Player {i + 1}: ").strip() or f"Player {i + 1}") for i in range(PLAYER_COUNT)]
 
     while len(players) > 1:
         deck = Deck(ALL_SUITS, ALL_VALUES.keys())
