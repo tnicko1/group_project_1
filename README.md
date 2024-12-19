@@ -95,6 +95,22 @@ Bob has been eliminated!
 The final winner: Alice!
 ```
 
+## Card Display (Alternative Approach)
+
+In an earlier version of the code, an alternative method for displaying the cards was implemented. This approach aimed to make the cards more visually appealing and easier to understand in the console by using colors and Unicode symbols for the suits (♠, ♥, ♣, ♦). The design included a visual representation of each card as a box with the card value and suit symbol inside, similar to how playing cards look in real life.
+
+### Example of Card Display:
+![Card Display Example](https://files.catbox.moe/b8tiyo.png)
+
+However, due to input handling issues and the complexity of matching user input with the card's visual format, this method was not included in the final version of the game. Instead, a simplified version of card display was used to avoid confusion and ensure a smooth gameplay experience.
+
+### Limitations:
+- The card input had to match the exact visual format (e.g., `10♠`), which was prone to errors.
+- Cards were represented using color and Unicode symbols, which could look different depending on the terminal or console settings.
+
+This approach was a fun attempt to improve the visual experience but ultimately didn't make it into the final code due to user input issues.
+
+
 
 ## Acknowledgments
 Thank you for playing! Feel free to customize the rules or add new features.
