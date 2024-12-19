@@ -10,21 +10,18 @@ class Card:
         return f"{self.suit}{self.value}"
 
 
-class Deck:
+class Deck(list):
     def __init__(self, suits, values):
-        self.cards = [Card(suit, value) for suit in suits for value in values]
+        super().__init__(Card(suit, value) for suit in suits for value in values)
         self.shuffle()
 
     def shuffle(self):
-        random.shuffle(self.cards)
+        random.shuffle(self)
 
     def deal(self):
-        if not self.cards:
+        if not self:
             raise ValueError("No more cards in the deck")
-        return self.cards.pop()
-
-    def __len__(self):
-        return len(self.cards)
+        return self.pop()
 
 
 class Player:
@@ -99,7 +96,7 @@ def main():
                         if str(card) == selected_card:
                             player.update_hand(card, deck.deal())
                             player.has_changed_card = True
-                            print(f"{player.name}'s updated hand: {player}")
+                            print(f"{player.name}'s hand updated. {player}")
                             break
                     else:
                         print("Card not found in hand. Please try again.")
